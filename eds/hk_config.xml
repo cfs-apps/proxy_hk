@@ -25,7 +25,7 @@
 <DesignParameters>
 
   <Package name="HK" shortDescription="Housekeeping App Configuration">
-
+     <Define name="COPY_TABLE_ENTRIES"  value="128" shortDescription="Moved from hk_extern_typedefs.h" />
   </Package>
 
 </DesignParameters>

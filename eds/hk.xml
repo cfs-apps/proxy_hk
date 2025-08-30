@@ -41,11 +41,11 @@
 
        <ContainerDataType name="HkTlm_Payload" shortDescription="HK housekeeping">
         <EntryList>
-          <Entry name="CmdCounter" type="BASE_TYPES/uint8" shortDescription="Count of valid commands received" />
-          <Entry name="ErrCounter" type="BASE_TYPES/uint8" shortDescription="Count of invalid commands received" />
+          <Entry name="CmdCounter"          type="BASE_TYPES/uint8"  shortDescription="Count of valid commands received" />
+          <Entry name="ErrCounter"          type="BASE_TYPES/uint8"  shortDescription="Count of invalid commands received" />
           <Entry name="CombinedPacketsSent" type="BASE_TYPES/uint16" shortDescription="Count of combined tlm pkts sent" />
-          <Entry name="MissingDataCtr" type="BASE_TYPES/uint16" shortDescription="Number of times missing data was detected" />
-          <Entry name="MemPoolHandle" type="CFE_ES/MemHandle" shortDescription="Memory pool handle used to get mempool diags" />
+          <Entry name="MissingDataCtr"      type="BASE_TYPES/uint16" shortDescription="Number of times missing data was detected" />
+          <Entry name="MemPoolHandle"       type="CFE_ES/MemHandle"  shortDescription="Memory pool handle used to get mempool diags" />
         </EntryList>
       </ContainerDataType>
 
@@ -54,7 +54,27 @@
           <Entry type="HkTlm_Payload" name="Payload" />
         </EntryList>
       </ContainerDataType>
-
+      
+     <ContainerDataType name="CombinedPkt1Tlm_Payload" shortDescription="">
+      <EntryList>
+        <Entry name="CfeEsCommandCounter"        type="BASE_TYPES/uint8" shortDescription="CFE_ES App Command Counter"/>
+        <Entry name="CfeEsCommandErrorCounter"   type="BASE_TYPES/uint8" shortDescription="CFE_ES App Command Error Counter"/>
+        <Entry name="CfeEvsCommandCounter"       type="BASE_TYPES/uint8" shortDescription="CFE_EVS App Command Counter"/>
+        <Entry name="CfeEvsCommandErrorCounter"  type="BASE_TYPES/uint8" shortDescription="CFE_EVS App Command Error Counter"/>
+        <Entry name="CfeSbCommandCounter"        type="BASE_TYPES/uint8" shortDescription="CFE_SB App Command Counter"/>
+        <Entry name="CfeSbCommandErrorCounter"   type="BASE_TYPES/uint8" shortDescription="CFE_SB App Command Error Counter"/>
+        <Entry name="CfeTimeCommandCounter"      type="BASE_TYPES/uint8" shortDescription="CFE_TBL App Command Counter"/>
+        <Entry name="CfeTimeCommandErrorCounter" type="BASE_TYPES/uint8" shortDescription="CFE_TBL App Command Error Counter"/>
+        <Entry name="CfeTblCommandCounter"       type="BASE_TYPES/uint8" shortDescription="CFE_TIME App Command Counter"/>
+        <Entry name="CfeTblCommandErrorCounter"  type="BASE_TYPES/uint8" shortDescription="CFE_TIME App Command Error Counter"/>
+      </EntryList>
+    </ContainerDataType>        
+      <ContainerDataType name="CombinedPkt1" baseType="CFE_HDR/TelemetryHeader">
+        <EntryList>
+          <Entry type="CombinedPkt1Tlm_Payload" name="Payload" />
+        </EntryList>
+      </ContainerDataType>
+      
       <ContainerDataType name="NoopCmd" baseType="CMD">
         <ConstraintSet>
           <ValueConstraint entry="Sec.FunctionCode" value="0" />
@@ -152,7 +172,7 @@
           </Interface>
           <Interface name="HK_COMBINED_PKT1_TLM" shortDescription="Software bus housekeeping telemetry interface" type="CFE_SB/Telemetry">
             <GenericTypeMapSet>
-              <GenericTypeMap name="TelemetryDataType" type="CFE_HDR/TelemetryHeader" />
+              <GenericTypeMap name="TelemetryDataType" type="HK/CombinedPkt1" />
             </GenericTypeMapSet>
           </Interface>
           <Interface name="HK_COMBINED_PKT2_TLM" shortDescription="Software bus housekeeping telemetry interface" type="CFE_SB/Telemetry">
