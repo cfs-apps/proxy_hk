@@ -24,20 +24,20 @@
 #ifndef HK_MSGIDS_H
 #define HK_MSGIDS_H
 
-#include "cfe_msgids.h"
+#include "cfe_msgids.h"  //bc
 
 /**
  * \defgroup cfshkcmdmid CFS Housekeeping Command Message IDs
  * \{
  */
 
-//#define HK_CMD_MID     0x189A /**< \brief HK Ground Commands Message ID */
-//#define HK_SEND_HK_MID 0x189B /**< \brief HK Send Housekeeping Data Cmd Message ID */
-//#define HK_SEND_COMBINED_PKT_MID 0x189C /**< \brief HK Send Combined Pkt Cmd Message ID */
+//bc #define HK_CMD_MID     0x189A /**< \brief HK Ground Commands Message ID */
+//bc #define HK_SEND_HK_MID 0x189B /**< \brief HK Send Housekeeping Data Cmd Message ID */
+//bc #define HK_SEND_COMBINED_PKT_MID 0x189C /**< \brief HK Send Combined Pkt Cmd Message ID */
 
-#define HK_CMD_MID                CFE_PLATFORM_CMD_TOPICID_TO_MID(CFE_MISSION_HK_CMD_TOPICID)
-#define HK_SEND_HK_MID            CFE_PLATFORM_CMD_TOPICID_TO_MID(CFE_MISSION_BC_SCH_4_SEC_TOPICID)
-#define HK_SEND_COMBINED_PKT_MID  CFE_PLATFORM_CMD_TOPICID_TO_MID(CFE_MISSION_BC_SCH_8_SEC_TOPICID)
+#define HK_CMD_MID                CFE_PLATFORM_CMD_TOPICID_TO_MID(CFE_MISSION_HK_CMD_TOPICID)       //bc
+#define HK_SEND_HK_MID            CFE_PLATFORM_CMD_TOPICID_TO_MID(CFE_MISSION_BC_SCH_4_SEC_TOPICID) //bc
+#define HK_SEND_COMBINED_PKT_MID  CFE_PLATFORM_CMD_TOPICID_TO_MID(CFE_MISSION_BC_SCH_8_SEC_TOPICID) //bc
 
 /**\}*/
 
@@ -46,17 +46,17 @@
  * \{
  */
 
-//#define HK_HK_TLM_MID 0x089B /**< \brief HK Housekeeping Telemetry Message ID */
-//#define HK_COMBINED_PKT1_MID 0x089C /**< \brief HK Combined Packet 1 Message ID */
-//#define HK_COMBINED_PKT2_MID 0x089D /**< \brief HK Combined Packet 2 Message ID */
-//#define HK_COMBINED_PKT3_MID 0x089E /**< \brief HK Combined Packet 3 Message ID */
-//#define HK_COMBINED_PKT4_MID 0x089F /**< \brief HK Combined Packet 4 Message ID */
+//bc #define HK_HK_TLM_MID 0x089B /**< \brief HK Housekeeping Telemetry Message ID */
+//bc #define HK_COMBINED_PKT1_MID 0x089C /**< \brief HK Combined Packet 1 Message ID */
+//bc #define HK_COMBINED_PKT2_MID 0x089D /**< \brief HK Combined Packet 2 Message ID */
+//bc #define HK_COMBINED_PKT3_MID 0x089E /**< \brief HK Combined Packet 3 Message ID */
+//bc #define HK_COMBINED_PKT4_MID 0x089F /**< \brief HK Combined Packet 4 Message ID */
 
-#define HK_HK_TLM_MID         CFE_PLATFORM_TLM_TOPICID_TO_MID(CFE_MISSION_HK_HK_TLM_TOPICID)
-#define HK_COMBINED_PKT1_MID  CFE_PLATFORM_TLM_TOPICID_TO_MID(CFE_MISSION_HK_COMBINED_PKT1_TLM_TOPICID)
-#define HK_COMBINED_PKT2_MID  CFE_PLATFORM_TLM_TOPICID_TO_MID(CFE_MISSION_HK_COMBINED_PKT2_TLM_TOPICID)
-#define HK_COMBINED_PKT3_MID  CFE_PLATFORM_TLM_TOPICID_TO_MID(CFE_MISSION_HK_COMBINED_PKT3_TLM_TOPICID)
-#define HK_COMBINED_PKT4_MID  CFE_PLATFORM_TLM_TOPICID_TO_MID(CFE_MISSION_HK_COMBINED_PKT4_TLM_TOPICID)
+#define HK_HK_TLM_MID         CFE_PLATFORM_TLM_TOPICID_TO_MID(CFE_MISSION_HK_HK_TLM_TOPICID)            //bc
+#define HK_COMBINED_PKT1_MID  CFE_PLATFORM_TLM_TOPICID_TO_MID(CFE_MISSION_HK_COMBINED_PKT1_TLM_TOPICID) //bc
+#define HK_COMBINED_PKT2_MID  CFE_PLATFORM_TLM_TOPICID_TO_MID(CFE_MISSION_HK_COMBINED_PKT2_TLM_TOPICID) //bc
+#define HK_COMBINED_PKT3_MID  CFE_PLATFORM_TLM_TOPICID_TO_MID(CFE_MISSION_HK_COMBINED_PKT3_TLM_TOPICID) //bc
+#define HK_COMBINED_PKT4_MID  CFE_PLATFORM_TLM_TOPICID_TO_MID(CFE_MISSION_HK_COMBINED_PKT4_TLM_TOPICID) //bc
 
 /**\}*/
 
