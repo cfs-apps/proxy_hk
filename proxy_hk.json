@@ -21,7 +21,6 @@
          "eds/hk.xml                   >> eds/hk.xml",
          "eds/hk_config.xml            >> eds/hk_config.xml",
          "fsw/inc/hk_msgids.h          >> fsw/inc/hk_msgids.h",
-         "fsw/inc/hk_platform_cfg.h    >> fsw/inc/hk_platform_cfg.h",
          "fsw/inc/hk_extern_typedefs.h >> fsw/inc/hk_extern_typedefs.h" 
       ]
    },
